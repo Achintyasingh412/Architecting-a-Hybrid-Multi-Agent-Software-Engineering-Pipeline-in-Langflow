@@ -31,7 +31,7 @@ The Root Cause: Heavy local models exhausted the local laptop's hardware constra
 
 The Solution: We optimized the model topology by integrating ultra-fast, lightweight models (such as qwen2.5 and llama3.2 variants) for local execution, drastically cutting down token generation time.
 
-3. Transitioning to Cloud Acceleration for the Debugger
+3. Transitioning to Cloud Acceleration for the Debugger !
 The Problem: While local coders excelled at code generation, passing combined multi-file outputs into a local debugger occasionally created sluggish pipelines or integration friction.
 
 The Solution: We experimented with cloud-hosted alternatives. After testing OpenRouter's free-tier inference routing, we ultimately integrated Groq utilizing llama-3.3-70b-versatile. Because Groq runs on specialized Language Processing Units (LPUs) rather than standard GPUs, it provided near-instantaneous token generation. This solved the bottleneck entirely, allowing the Senior Debugger to review and merge code in milliseconds without triggering rate limits or timeouts.
